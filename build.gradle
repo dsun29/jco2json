@@ -1,0 +1,24 @@
+group 'com.fullstackrebel.jco2json'
+version '1.0.0'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src/main'
+        }
+    }
+}
+
+
+dependencies {
+    compile 'com.googlecode.json-simple:json-simple:1.1.1'
+    compile files('C:/SAP/lib/sapjco.jar')
+}
