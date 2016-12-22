@@ -11,7 +11,7 @@ import java.util.*;
  *  Jco2Json parses JSON string into Map structure, and passes the values to a JCo function as import parameters,
  *  then convert exmport parameters (including tables) into a JSON String
  *
- *  Homepage: https://github.com/dsun29/jso2json
+ *  Homepage: https://github.com/dsun29/jco2json
  *  @author Dayong Sun <sundavy@gmail.com>
  *
  */
