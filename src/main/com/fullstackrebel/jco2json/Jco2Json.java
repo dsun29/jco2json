@@ -11,7 +11,7 @@ import java.util.*;
  *  Jco2Json parses JSON string into Map structure, and passes the values to a JCo function as import parameters,
  *  then convert exmport parameters (including tables) into a JSON String
  *
- *  Homepage: https://github.com/dsun29/jco2json
+ *  @see: https://github.com/dsun29/jco2json
  *  @author Dayong Sun <sundavy@gmail.com>
  *
  */
@@ -283,25 +283,21 @@ public class Jco2Json
     public void setTableParameter(String name, LinkedList list)
     {
         //Find table parameter with this name and set the appropriate valies
-        int numTabls = function.getTableParameterList().getNumFields();
-        for(int i=0; i<numTabls; i++) {
-            JCO.Table table = function.getTableParameterList().getTable(i);
-            String tableName = table.getName();
-            if (tableName.equals(name)) {
-                Iterator recordIter = list.listIterator();
-                while(recordIter.hasNext())
+        JCO.Table table = function.getTableParameterList().getTable(name);
+
+        if (table != null) {
+            Iterator recordIter = list.listIterator();
+            while(recordIter.hasNext())
+            {
+                table.appendRow();
+                LinkedHashMap fields = (LinkedHashMap)recordIter.next();
+                Iterator fieldIter = fields.entrySet().iterator();
+                while(fieldIter.hasNext())
                 {
-                    table.appendRow();
-                    LinkedHashMap fields = (LinkedHashMap)recordIter.next();
-                    Iterator fieldIter = fields.entrySet().iterator();
-                    while(fieldIter.hasNext())
-                    {
-                        Map.Entry field = (Map.Entry)fieldIter.next();
-                        table.setValue(field.getValue().toString(), field.getKey().toString());
-                    }
+                    Map.Entry field = (Map.Entry)fieldIter.next();
+                    table.setValue(field.getValue().toString(), field.getKey().toString());
                 }
             }
-
         }
     }
 

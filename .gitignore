@@ -1,5 +1,11 @@
 gradle
 .idea
 .gradle
-gradlenew
+gradlew
 gradlew.bat
+com
+index-files
+*.html
+*.css
+package-list
+
