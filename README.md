@@ -28,13 +28,17 @@ This project is inspired by the [jcoson](https://github.com/dhorions/jcoSon) pro
 
 
 ##Changelog
+###1.1.0 - 12-22-2016
+- Fix the bug that import table parameter was not working
+
+###1.0.1 - 12-22-2016
+- Add homepage in source code
+
 ###1.0.0 - 12-22-2016
 **First released**
 
 #License
 MIT License
-
-Copyright (c) [year] [fullname]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
